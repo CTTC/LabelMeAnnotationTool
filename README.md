@@ -203,6 +203,65 @@ definitions.
 (e.g. for Mechanical Turk instructions, etc.).
 
 
+### Detailed Instruction on Installation on Ubuntu 16.04
+
+1. Get the library package:
+
+```bash
+cd ~
+git clone https://github.com/CSAILVision/LabelMeAnnotationTool.git
+```
+2. Fulfill the web configuration
+
+```bash
+sudo apt-get install php
+sudo apt-get install apache2
+sudo apt-get install libapache2-mod-perl2
+sudo a2enmod include
+sudo a2enmod rewrite
+sudo a2enmod cgi
+```
+Edit file `/etc/apache2/sites-available/000-default.conf`, add following lines to the end of the file
+
+```bash
+<Directory "/var/www/html/LabelMeAnnotationTool">
+    Options Indexes FollowSymLinks MultiViews Includes ExecCGI
+    AddHandler cgi-script .cgi
+    AllowOverride all
+    Require all granted
+    AddType text/html .shtml
+    AddOutputFilter INCLUDES .shtml
+    DirectoryIndex index.shtml
+</Directory>
+```
+
+Add following lines after the line `IncludeOptional mods-enabled/*.conf` in `/etc/apache2/apache2.conf`
+```bash
+Options +Includes
+ScriptAlias "/cgi-bin/" "/usr/local/apache2/cgi-bin/"
+<Directory "/var/www/html/LabelMeAnnotationTool">
+    Options +ExecCGI
+</Directory>
+
+AddHandler cgi-script .cgi .pl
+```
+
+3. Put `LabelMe` on web server
+```bash
+cd /var/www/html
+sudo cp -r ~/LabelMeAnnotationTool/ .
+```
+4. Compile
+```bash
+cd LabelMeAnnotationTool
+make
+```
+
+5. Use it
+Open a web browser, enter: `http://localhost/LabelMeAnnotationTool/tool.html`
+
+
+
 ---- 
 
 (c) 2015, MIT Computer Science and Artificial Intelligence Laboratory
