@@ -259,7 +259,7 @@ make
 
 5. Use it
 Open a web browser, enter: `http://localhost/LabelMeAnnotationTool/tool.html`
-
+You may need to restart apache2 service (`sudo service apache2 restart`) if your website turns out to be blank.
 
 
 ---- 
