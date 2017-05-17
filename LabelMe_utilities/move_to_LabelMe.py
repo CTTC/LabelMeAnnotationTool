@@ -17,10 +17,14 @@ if __name__ == "__main__":
     dest_dir = '/var/www/html/LabelMeAnnotationTool/Images/example_folder'
     images = os.listdir(src_dir)
     dirlistfile = '/var/www/html/LabelMeAnnotationTool/annotationCache/DirLists/labelme.txt'
+    all_input = raw_input('Do you want to delete existing images in %s? (y/n)' % dest_dir)
+    if all_input == 'y':
+        shutil.rmtree(dest_dir)
     if os.path.exists(dirlistfile):
         os.remove(dirlistfile)
 
     print('Moving files to %s'%dest_dir)
+    images.sort()
     for image in images:
         src = os.path.join(src_dir, image)
         shutil.copy2(src, dest_dir)
