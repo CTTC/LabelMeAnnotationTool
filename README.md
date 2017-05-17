@@ -216,6 +216,7 @@ git clone https://github.com/CSAILVision/LabelMeAnnotationTool.git
 ```bash
 sudo apt-get install php
 sudo apt-get install apache2
+sudo apt-get install libapache2-mod-php
 sudo apt-get install libapache2-mod-perl2
 sudo a2enmod include
 sudo a2enmod rewrite
