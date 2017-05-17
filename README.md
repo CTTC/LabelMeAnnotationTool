@@ -257,7 +257,14 @@ cd LabelMeAnnotationTool
 make
 ```
 
-5. Use it
+5. Give Permission
+```bash
+sudo chown -R $USER:$USER /var/www/html
+sudo chmod -R 755 /var/www
+```
+The $USER variable will take the value of the user you are currently logged in as when you press Enter. 
+
+6. Use it
 Open a web browser, enter: `http://localhost/LabelMeAnnotationTool/tool.html`
 You may need to restart apache2 service (`sudo service apache2 restart`) if your website turns out to be blank.
 
