@@ -11,7 +11,7 @@ import os
 
 
 if __name__ == "__main__":
-    folder_idx = 0 # 0 or 1 or 2 or 3
+    folder_idx = 3 # 0 or 1 or 2 or 3
     cur_dir = os.path.dirname(os.path.realpath(__file__))
     src_dir = os.path.join(cur_dir, '%d' % folder_idx)
     dest_dir = '/var/www/html/LabelMeAnnotationTool/Images/example_folder'

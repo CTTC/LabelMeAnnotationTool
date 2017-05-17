@@ -16,7 +16,7 @@ import numpy as np
 
 if __name__ == "__main__":
     cur_dir = os.path.dirname(os.path.realpath(__file__))
-    save_path = os.path.join(cur_dir, 'Images')
+    save_path = os.path.join(cur_dir, 'Merged_Images')
     left_path = os.path.join(save_path, 'Left')
     right_path = os.path.join(save_path, 'Right')
     left_image_list = os.listdir(left_path)

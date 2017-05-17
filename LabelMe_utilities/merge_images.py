@@ -15,7 +15,7 @@ import glob
 
 if __name__ == "__main__":
     cur_dir = os.path.dirname(os.path.realpath(__file__))
-    dest_dir = os.path.join(cur_dir, 'Images_Merged')
+    dest_dir = os.path.join(cur_dir, 'Merged_Images')
     left_dest_path = os.path.join(dest_dir, 'Left')
     right_dest_path = os.path.join(dest_dir, 'Right')
     if os.path.exists(dest_dir):
@@ -25,6 +25,7 @@ if __name__ == "__main__":
     os.makedirs(right_dest_path)
 
     image_dirs = glob.glob('%s/Images*' % cur_dir)
+    print('Images dir: ', image_dirs)
     id = 0
     print('Merging images ... ')
     for image_dir in image_dirs:
