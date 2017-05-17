@@ -33,6 +33,7 @@ if __name__ == "__main__":
 
     label_dirs = glob.glob('%s/Labels*' % cur_dir)
     id = 0
+    print('Merging Labels and Images ...')
     for label_dir in label_dirs:
         anno_dir = os.path.join(label_dir, 'Annotations')
         image_dir = os.path.join(label_dir, 'Images')
@@ -69,7 +70,7 @@ if __name__ == "__main__":
                 new_mask = re.sub('\d\d\d\d\d\d\d\d', '%08d' % id, mask_name)
                 shutil.copy2(mask, os.path.join(mask_dest_path, new_mask))
             id += 1
-
+    print('Merging done ...')
 
 
 
