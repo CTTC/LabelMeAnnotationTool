@@ -253,19 +253,21 @@ AddHandler cgi-script .cgi .pl
 cd /var/www/html
 sudo cp -r ~/LabelMeAnnotationTool/ .
 ```
-4. Compile
-```bash
-cd LabelMeAnnotationTool
-make
-```
-If you install php after `make`, then you may need to remake it.
 
-5. Give Permission
+
+4. Give Permission
 ```bash
 sudo chown -R $USER:$USER /var/www/html
 sudo chmod -R 755 /var/www
 ```
 The $USER variable will take the value of the user you are currently logged in as when you press Enter. 
+
+5. Compile
+```bash
+cd LabelMeAnnotationTool
+make
+```
+If you install php after `make`, then you may need to remake it. Also, `make` after change permission.
 
 6. Use it
 Open a web browser, enter: `http://localhost/LabelMeAnnotationTool/tool.html`
