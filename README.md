@@ -235,6 +235,7 @@ Edit file `/etc/apache2/sites-available/000-default.conf`, add following lines t
     DirectoryIndex index.shtml
 </Directory>
 ```
+If this does not work for you, you may need to put these lines inside <VirtualHost>
 
 Add following lines after the line `IncludeOptional mods-enabled/*.conf` in `/etc/apache2/apache2.conf`
 ```bash
@@ -245,7 +246,7 @@ ScriptAlias "/cgi-bin/" "/usr/local/apache2/cgi-bin/"
 </Directory>
 
 AddHandler cgi-script .cgi .pl
-```
+```c
 
 3. Put `LabelMe` on web server
 ```bash
@@ -257,6 +258,7 @@ sudo cp -r ~/LabelMeAnnotationTool/ .
 cd LabelMeAnnotationTool
 make
 ```
+If you install php after `make`, then you may need to remake it.
 
 5. Give Permission
 ```bash
