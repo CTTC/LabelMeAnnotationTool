@@ -8,6 +8,7 @@ Email: chentao904@163.com
 Date: 2017.05.16
 """
 
+from __future__ import print_function
 import shutil
 import os
 import glob

@@ -8,14 +8,14 @@ Email: chentao904@163.com
 Date: 2017.05.16
 """
 
-
+from __future__ import print_function
 import matplotlib.pyplot as plt
 import numpy as np
 import os
 try:
-    import xml_test.etree.cElementTree as ET
+    import xml.etree.cElementTree as ET
 except ImportError:
-    import xml_test.etree.ElementTree as ET
+    import xml.etree.ElementTree as ET
 
 def plot_bar_from_counter(counter, ax=None):
     """"
@@ -53,7 +53,7 @@ if __name__ == "__main__":
     anno_path = os.path.join(label_dir, 'Annotations')
     anno_list = os.listdir(anno_path)
     num_obj = 0
-    classes = ['dfa', 'dfad', 'hhghg', 'sdfa']
+    classes = ['floor', 'table', 'tv']
     class_dict = dict.fromkeys(classes, 0)
     for anno_file in anno_list:
         anno_file = os.path.join(anno_path, anno_file)

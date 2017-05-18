@@ -7,6 +7,7 @@ Email: chentao904@163.com
 Date: 2017.05.16
 """
 
+from __future__ import print_function
 import cv2
 import rospy
 import numpy as np

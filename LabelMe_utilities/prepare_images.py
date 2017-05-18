@@ -8,6 +8,7 @@ Email: chentao904@163.com
 Date: 2017.05.16
 """
 
+from __future__ import print_function
 import shutil
 import os
 import re
@@ -21,7 +22,7 @@ if __name__ == "__main__":
     right_path = os.path.join(save_path, 'Right')
     left_image_list = os.listdir(left_path)
     right_image_list = os.listdir(right_path)
-    dest_path = os.path.join(cur_dir, 'Merged')
+    dest_path = os.path.join(cur_dir, 'Merged_LR')
     if not os.path.exists(dest_path):
         os.makedirs(dest_path)
     else:
