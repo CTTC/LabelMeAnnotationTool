@@ -30,6 +30,9 @@ if __name__ == "__main__":
     os.makedirs(anno_dest_path)
     os.makedirs(image_dest_path)
     os.makedirs(mask_dest_path)
+    relation_file = os.path.join(dest_dir, 'relation.txt')
+    if os.path.exists(relation_file):
+        os.remove(relation_file)
 
     label_dirs = glob.glob('%s/Labels*' % cur_dir)
     id = 0
@@ -49,13 +52,19 @@ if __name__ == "__main__":
             mask_files = glob.glob("%s/%s_mask*.png" % (mask_dir, image_idx))
 
             tree = ET.ElementTree(file=anno_file)
+            root = tree.getroot()
             filename = tree.find('filename')
             filename.text = '%08d.jpg' % id
-
+            delete_objects = []
             for object in tree.iter('object'):
+                deleted = object.find('deleted')
+                if int(deleted.text) == 1:
+                    delete_objects.append(object)
+                    continue
                 seg = object.find('segm')
                 if seg is None:
                     continue
+
                 mask = seg.find('mask')
                 mask_text_ori = mask.text
                 mask.text = re.sub('\d\d\d\d\d\d\d\d', '%08d' % id, mask_text_ori)
@@ -63,12 +72,16 @@ if __name__ == "__main__":
                 scribble_name = scribble.find('scribble_name')
                 scribble_name_ori = scribble_name.text
                 scribble_name.text = re.sub('\d\d\d\d\d\d\d\d', '%08d' % id, scribble_name_ori)
+            for object in delete_objects:
+                root.remove(object)
             tree.write('%s/%08d.xml' % (anno_dest_path, id))
             shutil.copy2(os.path.join(image_dir, image), os.path.join(image_dest_path, '%08d.jpg' % id))
             for mask in mask_files:
                 mask_name = mask.split('/')[-1]
                 new_mask = re.sub('\d\d\d\d\d\d\d\d', '%08d' % id, mask_name)
                 shutil.copy2(mask, os.path.join(mask_dest_path, new_mask))
+            with open(relation_file, 'a+') as f:
+                f.write('%s --> %08d\n' % (image_idx, id))
             id += 1
     print('Merging done ...')
 
