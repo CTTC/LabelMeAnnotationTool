@@ -19,7 +19,7 @@ except ImportError:
     import xml.etree.ElementTree as ET
 
 if __name__ == "__main__":
-    class_wanted = ['floor', 'tv']
+    class_wanted = ['floor']
     cur_dir = os.path.dirname(os.path.realpath(__file__))
     root_dir = os.path.join(cur_dir, 'Refined Labels')
     anno_path = os.path.join(root_dir, 'Annotations')

@@ -38,6 +38,7 @@ if __name__ == "__main__":
     id = 0
     print('Merging Labels and Images ...')
     for label_dir in label_dirs:
+        print('Processing folder: ', label_dir)
         anno_dir = os.path.join(label_dir, 'Annotations')
         image_dir = os.path.join(label_dir, 'Images')
         mask_dir = os.path.join(label_dir, 'Masks')
@@ -46,6 +47,10 @@ if __name__ == "__main__":
         images_list = os.listdir(image_dir)
         for image in images_list:
             image_idx = image.split('.')[0]
+            try:
+                image_i = int(image_idx)
+            except:
+                continue
             anno_file = os.path.join(anno_dir, '%s.xml' % image_idx)
             if not os.path.exists(anno_file):
                 continue
