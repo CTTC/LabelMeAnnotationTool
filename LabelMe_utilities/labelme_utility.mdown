@@ -5,6 +5,10 @@ LabelMe is not friendly with dealing with tons of images. So I wrote several uti
 ### take_photo.py
 This will subscribe to the stereo images sychronously, and saving them.
 
+### merge_images.py
+This script will merge folders Images, Images, Images, Images, ...
+And reindex image_ids
+
 ### clean_LabelMe.py
 Once you ran this script, you can choose to delete all the existing labels in you local machine or delete the labels corresponding to user-specific images
 
@@ -19,8 +23,20 @@ This script will move all the annotations, scribbles, images in LabelMe to the d
 
 ### merge_labels_images.py
 This script will merge folders Labels, Labels1, Labels2, Labels3, ...
-And reindexing image_ids
+And reindex image_ids
 
 ### count_classes.py
 This script count the number of each class, and plot the statistics.
+
+### get_class.py
+This script fetches the annotations, masks, and images for specific classes, and reindex them
+
+### show_images_masks.py
+This script shows original images overlayed with masks
+
+### delete_and_reindex.py
+This script deletes annotations, masks, and images corresponding to user-specified images,
+and redinexes these files
+
+
 
