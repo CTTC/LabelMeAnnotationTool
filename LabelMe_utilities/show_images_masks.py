@@ -19,7 +19,8 @@ except ImportError:
 
 if __name__ == "__main__":
     cur_dir = os.path.dirname(os.path.realpath(__file__))
-    root_dir = os.path.join(cur_dir, 'Refined Labels')
+    # root_dir = os.path.join(cur_dir, 'Refined Labels')
+    root_dir = os.path.join(cur_dir, 'Classes', 'floor')
     anno_path = os.path.join(root_dir, 'Annotations')
     image_path = os.path.join(root_dir, 'Images')
     mask_path = os.path.join(root_dir, 'Masks')
@@ -72,8 +73,9 @@ if __name__ == "__main__":
         # cv2.imshow('Testing', image)
         # cv2.waitKey(0)
         plt.cla()
+        plt.title('%s' % image_name)
         plt.axis("off")
-        plt.imshow(image)
+        plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
         plt.show()
 
 
