@@ -20,7 +20,6 @@ except ImportError:
 if __name__ == "__main__":
     cur_dir = os.path.dirname(os.path.realpath(__file__))
     root_dir = os.path.join(cur_dir, 'Refined Labels')
-    root_dir = '/home/chentao/PycharmProjects/LabelMe_utilities/Classes/tv'
     anno_path = os.path.join(root_dir, 'Annotations')
     image_path = os.path.join(root_dir, 'Images')
     mask_path = os.path.join(root_dir, 'Masks')

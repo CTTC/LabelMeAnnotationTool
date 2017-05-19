@@ -63,6 +63,9 @@ if __name__ == "__main__":
         for object in tree.iter('object'):
             name = object.find('name')
             seg = object.find('segm')
+            deleted = object.find('deleted')
+            if int(deleted.text) == 1:
+                continue
             if seg is None:
                 continue
             num_obj += 1
