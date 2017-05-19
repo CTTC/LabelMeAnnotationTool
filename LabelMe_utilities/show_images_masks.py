@@ -26,7 +26,7 @@ if __name__ == "__main__":
     mask_path = os.path.join(root_dir, 'Masks')
 
     num_images = os.listdir(image_path)
-    check_list = range(20)#range(num_images)
+    check_list = range(20)#range(len(num_images))
     alpha = 0.4
     for idx in check_list:
         image_name = '%08d.jpg' % idx
