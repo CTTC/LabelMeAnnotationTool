@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
 Delete annotations, masks, and images corresponding to user-specified images,
-and redinexing these files
+and reindex these files
 
 Author: Tao Chen
 Email: chentao904@163.com

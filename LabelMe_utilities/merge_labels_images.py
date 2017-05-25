@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
 Merge folders Labels, Labels1, Labels2, Labels3, ...
-And reindexing image_ids
+And reindex image_ids
 
 Author: Tao Chen
 Email: chentao904@163.com

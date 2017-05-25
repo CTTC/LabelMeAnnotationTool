@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
 Merge folders Images, Images, Images, Images, ...
-And reindexing image_ids
+And reindex image_ids
 
 Author: Tao Chen
 Email: chentao904@163.com
