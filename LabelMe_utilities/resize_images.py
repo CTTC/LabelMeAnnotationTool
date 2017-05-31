@@ -25,6 +25,9 @@ if __name__ == "__main__":
     newy = 480
     images = os.listdir(src_dir)
     for image in images:
+        if not '.jpg' in image:
+            continue
+        # print('Resizing image %s' % image)
         image_idx = image.split('.')[0]
         image_path = os.path.join(src_dir, image)
         oriimage = cv2.imread(image_path)

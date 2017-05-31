@@ -20,7 +20,7 @@ except ImportError:
 
 if __name__ == "__main__":
     cur_dir = os.path.dirname(os.path.realpath(__file__))
-    dest_dir = os.path.join(cur_dir, 'Refined Labels')
+    dest_dir = os.path.join(cur_dir, 'Merged Labels')
     anno_dest_path = os.path.join(dest_dir, 'Annotations')
     image_dest_path = os.path.join(dest_dir, 'Images')
     mask_dest_path = os.path.join(dest_dir, 'Masks')

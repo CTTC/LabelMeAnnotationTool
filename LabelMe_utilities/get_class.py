@@ -21,7 +21,7 @@ except ImportError:
 if __name__ == "__main__":
     class_wanted = ['floor']
     cur_dir = os.path.dirname(os.path.realpath(__file__))
-    root_dir = os.path.join(cur_dir, 'Refined Labels')
+    root_dir = os.path.join(cur_dir, 'Merged Labels')
     anno_path = os.path.join(root_dir, 'Annotations')
     image_path = os.path.join(root_dir, 'Images')
     mask_path = os.path.join(root_dir, 'Masks')

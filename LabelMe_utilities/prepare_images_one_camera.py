@@ -20,7 +20,7 @@ if __name__ == "__main__":
     src_path = os.path.join(cur_dir, 'Resized_Cameras')
     print('Start separating images ...')
     src_files = os.listdir(src_path)
-    num_sep = 2
+    num_sep = 4
     tgt_folders = []
     for idx in xrange(num_sep):
         folder = os.path.join(cur_dir, '%d'%idx)

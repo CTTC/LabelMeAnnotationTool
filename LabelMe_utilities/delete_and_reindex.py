@@ -20,7 +20,7 @@ except ImportError:
 
 if __name__ == "__main__":
     cur_dir = os.path.dirname(os.path.realpath(__file__))
-    root_dir = os.path.join(cur_dir, 'Classes', 'floor')
+    root_dir = os.path.join(cur_dir, 'Labels0')
     anno_path = os.path.join(root_dir, 'Annotations')
     image_path = os.path.join(root_dir, 'Images')
     mask_path = os.path.join(root_dir, 'Masks')

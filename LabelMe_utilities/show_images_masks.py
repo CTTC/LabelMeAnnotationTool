@@ -19,14 +19,14 @@ except ImportError:
 
 if __name__ == "__main__":
     cur_dir = os.path.dirname(os.path.realpath(__file__))
-    # root_dir = os.path.join(cur_dir, 'Refined Labels')
-    root_dir = os.path.join(cur_dir, 'Classes', 'floor')
+    root_dir = os.path.join(cur_dir, 'Augmented Images')
+    # root_dir = os.path.join(cur_dir, 'Classes', 'floor')
     anno_path = os.path.join(root_dir, 'Annotations')
     image_path = os.path.join(root_dir, 'Images')
     mask_path = os.path.join(root_dir, 'Masks')
 
     num_images = os.listdir(image_path)
-    check_list = range(20)#range(len(num_images))
+    check_list = range(50)#range(len(num_images))
     alpha = 0.4
     for idx in check_list:
         image_name = '%08d.jpg' % idx
