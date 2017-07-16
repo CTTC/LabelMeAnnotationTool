@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 """
 Merge folders Images, Images, Images, Images, ...
+Each Images* contains stereo images(left camera, right camera)
 And reindex image_ids
 
 Author: Tao Chen

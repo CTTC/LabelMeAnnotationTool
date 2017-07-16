@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 """
 Merge folders Camera*, ...
+Each Camera* contains images ending with jpg, png, or JPG
 And reindex image_ids
 
 Author: Tao Chen
